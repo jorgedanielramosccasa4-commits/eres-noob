@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalle especial</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #fffafc;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    p {
+      font-size: 1.5em;
+      color: #333;
+      text-align: center;
+      z-index: 1;
+    }
+    .container {
+      position: relative;
+      width: 80%;
+      max-width: 400px;
+      margin: auto;
+    }
+    .flores {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      animation: floresEntrada 1.5s ease-out;
+    }
+    .imagenEncima {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%) scale(0);
+      width: 50%;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      animation: imagenSurge 1.5s ease-out forwards;
+      animation-delay: 1.5s;
+    }
+    @keyframes floresEntrada {
+      0% { transform: scale(0); opacity: 0; }
+      80% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+    @keyframes imagenSurge {
+      0% { transform: translateX(-50%) scale(0); opacity: 0; }
+      100% { transform: translateX(-50%) scale(1); opacity: 1; }
+    }
+    button {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      font-size: 1em;
+      background: #ff4da6;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p>Estas flores son un pequeño gesto para una gran persona</p>
+    <!-- Imagen de base con flores -->
+    <img class="flores" src="https://unsplash.com/es/s/fotos/flores-amarillas.jpg" alt="Flores decoración">
+
+    <!-- Imagen encima que “sale” -->
+    <img class="imagenEncima" src="https://scontent.flim19-1.fna.fbcdn.net/v/t69.46293-2/550174845_823461193693307_6742101271589718286_n.?             stp=dst-jpg_p480x480_tt6&_nc_cat=110&ccb=1-7&_nc_sid=942482&_nc_ohc=ltktcxXWJ1QQ7kNvwFZvV7k&_nc_oc=AdmodnkFsxxvqDP2ksvxPNBPl8TGFxfhAs40GEh3S-iaWH45Q4nhlBesTL80yEmj398&_nc_zt=28&_nc_ht=scontent.flim19-1.fna&_nc_gid=c5LxoRwJsDOKefE7iYLg2g&oh=03_Q7cD3QEw4mcdOxbrpfk7AicexpbDKSRyTUaDeVuBafOmPyPsDQ&oe=68D295BB.jpg" alt="Imagen encima">
+  </div>
+
+  <!-- Audio de fondo -->
+  <audio id="musicaFondo" loop>
+    <source src="https://youtu.be/T8TtE-enslA?si=X08YF2pgZisiLr6q.mp3" type="audio/mpeg">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+
+  <!-- Botón para empezar la música -->
+  <button onclick="document.getElementById('musicaFondo').play()">🎵 Reproducir música</button>
+</body>
+</html>
